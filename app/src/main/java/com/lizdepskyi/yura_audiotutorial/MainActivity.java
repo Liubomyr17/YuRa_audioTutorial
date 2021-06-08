@@ -59,9 +59,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void previous(View view) {
+        seekBar.setProgress(0);
+        mediaPlayer.seekTo(0);
+        mediaPlayer.pause();
+        playPauseItem.setImageResource(R.drawable.ic_baseline_play_orange);
     }
 
     public void next(View view) {
+        seekBar.setProgress(mediaPlayer.getDuration());
+        mediaPlayer.seekTo(mediaPlayer.getDuration());
+        mediaPlayer.pause();
+        playPauseItem.setImageResource(R.drawable.ic_baseline_play_orange);
     }
 
     public void play(View view) {
